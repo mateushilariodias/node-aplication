@@ -9,19 +9,24 @@
 // server.listen(3333)
 
 import { fastify } from 'fastify';
+import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify();
 
-server.get('/', () => {
-    return "Hello, world!";
+server.post('/videos', () => {
+    return "Hello, post";
 })
 
-server.get('/mateus', () => {
-    return "Hello, Nateus!";
+server.get('/videos', () => {
+    return "Hello, get!";
 })
 
-server.get('/sofia', () => {
-    return "Hello, Sofia!";
+server.put('/videos/:id', () => {
+    return "Hello, put!";
+})
+
+server.delete('/videos/:id', () => {
+    return "Hello, delete!";
 })
 
 server.listen({
